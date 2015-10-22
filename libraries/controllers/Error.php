@@ -34,5 +34,36 @@ namespace de\codeschubser\application\controllers;
  */
 class Error
 {
-    
+
+    /**
+     * CONSTRUCTOR
+     *
+     * Set debug environment.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  void
+     */
+    public function __construct()
+    {
+        if (DEBUG) {
+            ini_set('error_reporting', DEBUG_LEVEL);
+
+            if (DEBUG_DISPLAY) {
+                ini_set('display_errors', true);
+            } else {
+                ini_set('display_errors', false);
+            }
+
+            if (DEBUG_LOG) {
+                ini_set('log_errors', true);
+                ini_set('error_log', DEBUG_LOG_FILE);
+            }
+        } else {
+            ini_set('error_reporting',
+                E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR);
+        }
+    }
+
 }
