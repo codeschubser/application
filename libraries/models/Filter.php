@@ -29,7 +29,7 @@ namespace de\codeschubser\application\models;
  *
  * @abstract
  * @category    OOP Application
- * @package
+ * @package     Models
  * @author      Michael Topp <blog@codeschubser.de>
  * @copyright   Copyright (c), 2015 Codeschubser.de
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
