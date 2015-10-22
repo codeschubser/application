@@ -79,4 +79,17 @@ class Error
 
     }
 
+    /**
+     * Unregister own error handler class and set previous handlers.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  void
+     */
+    public function unregister()
+    {
+
+    }
+
 }
