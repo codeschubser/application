@@ -35,4 +35,26 @@ namespace de\codeschubser\application\exceptions;
 class ErrorException extends \ErrorException
 {
 
+    /**
+     * CONSTRUCTOR
+     *
+     * Override parent constructor to make $message and $code not optionally.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   string      $message    The Exception message to throw.
+     * @param   int         $code       The Exception code.
+     * @param   int         $severity   Optional: The severity level of the exception, default:1
+     * @param   string      $filename   Optional: The filename where the exception is thrown, default:__FILE__
+     * @param   int         $lineno     Optional: The line number where the exception is thrown, default:__LINE__
+     * @param   \Exception  $previous   Optional: The previous exception used for the exception chaining, default:null
+     * @return  void
+     */
+    public function __construct($message, $code, $severity = 1, $filename = __FILE__,
+        $lineno = __LINE__, \Exception $previous = null)
+    {
+        parent::__construct($message, $code, $severity, $filename, $lineno, $previous);
+    }
+
 }
