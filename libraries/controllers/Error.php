@@ -89,7 +89,7 @@ class Error
      */
     public function unregister()
     {
-        
+        restore_error_handler();
     }
 
     /**
