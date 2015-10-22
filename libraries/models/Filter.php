@@ -47,11 +47,11 @@ abstract class Filter
      * @access  public
      * @static
      * @param   string  $name   Name of a variable to get.
-     * @param   int     $filter Optional: The ID of the filter to apply, default:513
+     * @param   int     $filter Optional: The ID of the filter to apply, default:516
      * @return  mixed|bool|null Value of the requested variable on success, false if the filter fails
      *                          or null if the variable is not set.
      */
-    public static function post($name, $filter = FILTER_SANITIZE_STRING)
+    public static function post($name, $filter = FILTER_DEFAULT)
     {
         return filter_input(INPUT_POST, $name, $filter);
     }
