@@ -37,5 +37,21 @@ namespace de\codeschubser\application\models;
  */
 abstract class Validate extends Filter
 {
-    
+
+    /**
+     * Validate a variable if is integer.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @param   string          $name   Name of a variable to get.
+     * @return  mixed|bool|null Value of the requested variable on success, false if the filter fails
+     *                          or null if the variable is not set.
+     */
+    public static function postInt($name)
+    {
+        return parent::post($name, FILTER_VALIDATE_INT);
+    }
+
 }
