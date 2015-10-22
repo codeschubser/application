@@ -1,5 +1,7 @@
 <?php
 /**
+ * Default access file.
+ *
  * The MIT License
  *
  * Copyright 2015 Codeschubser.de
