@@ -34,6 +34,7 @@ namespace de\codeschubser\application\models;
  */
 class Session implements \SessionHandlerInterface
 {
+
     /**
      * CONSTRUCTOR
      *
@@ -47,6 +48,10 @@ class Session implements \SessionHandlerInterface
     public function __construct()
     {
         // Set session environment
+        ini_set('session.save_path', SESS_SAVEPATH);
+        ini_set('session.gc_maxlifetime', SESS_LIFETIME);
+        ini_set('session.gc_probability', SESS_GC_PROB);
+        ini_set('session.gc_divisor', SESS_GC_DIVISOR);
 
         // Set own session handler
         $this->register();
