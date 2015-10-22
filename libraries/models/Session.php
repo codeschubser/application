@@ -76,4 +76,37 @@ class Session extends \SessionHandler
         return session_set_save_handler($this, true);
     }
 
+    /**
+     * Read session data.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   string  $session_id The session id to read data for
+     * @return  mixed               Encoded string or empty string on failure
+     */
+    public function read($session_id)
+    {
+        $data = parent::read($session_id);
+
+        return mcrypt_decrypt(MCRYPT_RIJNDAEL_128, SESS_ENC_KEY, $data, MCRYPT_MODE_ECB);
+    }
+
+    /**
+     * Write session data.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   string  $session_id     The session id
+     * @param   string  $session_data   The encoded session data
+     * @return  bool                    True on success, false on failure
+     */
+    public function write($session_id, $session_data)
+    {
+        $data = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, SESS_ENC_KEY, $session_data, MCRYPT_MODE_ECB);
+
+        return parent::write($session_id, $data);
+    }
+
 }
