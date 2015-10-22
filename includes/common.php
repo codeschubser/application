@@ -1,4 +1,7 @@
 <?php
+
+use de\codeschubser\application\vendors\Autoloader;
+
 /**
  * Advanced configuration file.
  *
@@ -31,3 +34,24 @@
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version     $Id: common.php,v 0.0.1 22.10.2015 09:05:15 mitopp Exp $;
  */
+if (!defined('ABSPATH'))
+    define(ABSPATH, dirname(dirname(__FILE__)));
+
+// Main configuration file
+require_once(ABSPATH . '/config.php');
+
+// Default configuration
+require_once(ABSPATH . '/includes/defaults.php');
+
+// Internal constants
+require_once(ABSPATH . '/includes/constants.php');
+
+// Compatibility functions
+require_once(ABSPATH . '/includes/compat.php');
+
+// Standalone functions
+require_once(ABSPATH . '/includes/functions.php');
+
+// Autoloader
+require_once(ABSPATH . '/libraries/vendors/Autoloader.php');
+
