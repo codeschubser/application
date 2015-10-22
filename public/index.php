@@ -29,3 +29,8 @@
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version     $Id: index.php,v 0.0.1 22.10.2015 08:54:06 mitopp Exp $;
  */
+if (!defined('ABSPATH'))
+    define('ABSPATH', dirname(dirname(__FILE__)));
+
+// Bootstrapping
+require_once(ABSPATH . '/includes/common.php');
