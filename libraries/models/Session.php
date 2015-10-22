@@ -34,5 +34,24 @@ namespace de\codeschubser\application\models;
  */
 class Session extends \SessionHandler
 {
-    
+    /**
+     * CONSTRUCTOR
+     *
+     * Set session environment, register own session handler and start session.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  void
+     */
+    public function __construct()
+    {
+        // Set session environment
+
+        // Set own session handler
+
+
+        // Start session
+        session_start();
+    }
 }
