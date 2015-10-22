@@ -32,7 +32,7 @@ namespace de\codeschubser\application\models;
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version     $Id: Session.php,v 0.0.1 22.10.2015 10:23:30 mitopp Exp $;
  */
-class Session
+class Session extends \SessionHandler
 {
     
 }
