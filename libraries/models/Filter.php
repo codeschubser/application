@@ -37,8 +37,9 @@ namespace de\codeschubser\application\models;
  */
 abstract class Filter
 {
+
     /**
-     * Gets a specific external variable by name and optionally filters it.
+     * Gets a specific $_POST variable by name and optionally filters it.
      *
      * @since   0.0.1
      *
@@ -55,4 +56,24 @@ abstract class Filter
     {
         return filter_input(INPUT_POST, $name, $filter);
     }
+
+    /**
+     * Gets a specific $_GET variable by name and optionally filters it.
+     *
+     * @since   0.0.1
+     *
+     * @see     filter_input
+     *
+     * @access  public
+     * @static
+     * @param   string  $name   Name of a variable to get.
+     * @param   int     $filter Optional: The ID of the filter to apply, default:516
+     * @return  mixed|bool|null Value of the requested variable on success, false if the filter fails
+     *                          or null if the variable is not set.
+     */
+    public static function get($name, $filter = FILTER_DEFAULT)
+    {
+        return filter_input(INPUT_GET, $name, $filter);
+    }
+
 }
