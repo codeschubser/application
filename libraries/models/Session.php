@@ -32,7 +32,7 @@ namespace de\codeschubser\application\models;
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version     $Id: Session.php,v 0.0.1 22.10.2015 10:23:30 mitopp Exp $;
  */
-class Session implements \SessionHandlerInterface
+class Session extends \SessionHandler
 {
 
     /**
@@ -74,36 +74,6 @@ class Session implements \SessionHandlerInterface
     public function register()
     {
         return session_set_save_handler($this, true);
-    }
-
-    public function close()
-    {
-
-    }
-
-    public function destroy($session_id)
-    {
-
-    }
-
-    public function gc($maxlifetime)
-    {
-
-    }
-
-    public function open($save_path, $name)
-    {
-
-    }
-
-    public function read($session_id)
-    {
-
-    }
-
-    public function write($session_id, $session_data)
-    {
-
     }
 
 }
