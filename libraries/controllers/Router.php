@@ -2,6 +2,8 @@
 
 namespace de\codeschubser\application\controllers;
 
+use de\codeschubser\application\vendors\BramusRouter;
+
 /**
  * The MIT License
  *
@@ -32,7 +34,7 @@ namespace de\codeschubser\application\controllers;
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version     $Id: Router.php,v 0.0.1 22.10.2015 10:21:02 mitopp Exp $;
  */
-class Router
+class Router extends BramusRouter
 {
-    
+
 }
