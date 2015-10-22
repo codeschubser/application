@@ -37,5 +37,22 @@ namespace de\codeschubser\application\models;
  */
 abstract class Filter
 {
-
+    /**
+     * Gets a specific external variable by name and optionally filters it.
+     *
+     * @since   0.0.1
+     *
+     * @see     filter_input
+     *
+     * @access  public
+     * @static
+     * @param   string  $name   Name of a variable to get.
+     * @param   int     $filter Optional: The ID of the filter to apply, default:513
+     * @return  mixed|bool|null Value of the requested variable on success, false if the filter fails
+     *                          or null if the variable is not set.
+     */
+    public static function post($name, $filter = FILTER_SANITIZE_STRING)
+    {
+        return filter_input(INPUT_POST, $name, $filter);
+    }
 }
