@@ -92,4 +92,21 @@ class Error
 
     }
 
+    /**
+     * Custom error handler.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   int     $code       Contains the level of the error raised.
+     * @param   string  $message    Contains the error message.
+     * @param   string  $file       Optional: Contains the filename that the error was raised in, default:__FILE__
+     * @param   int     $line       Optional: Contains the line number the error was raised at, default:__LINE__
+     * @param   array   $context    Optional: An array that points to the active symbol table at the point the error occurred, default:array
+     * @return  bool    Every times true to disable PHP internal error handler.
+     */
+    public function error($code, $message, $file = __FILE__, $line = __LINE__, array $context = array())
+    {
+
+    }
 }
