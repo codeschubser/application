@@ -47,3 +47,17 @@ if (!defined('DEBUG_LOG'))
     define('DEBUG_LOG', true);
 if (!defined('DEBUG_LOG_FILE'))
     define('DEBUG_LOG_FILE', ABSPATH . '/temp/debug.log');
+
+/**
+ * Sessions
+ */
+if (!defined('SESS_SAVEPATH'))
+    define('SESS_SAVEPATH', ABSPATH . '/temp/sessions/');
+if (!defined('SESS_LIFETIME'))
+    define('SESS_LIFETIME', 14400);
+if (!defined('SESS_TIMEOUT'))
+    define('SESS_TIMEOUT', 3600);
+if (!defined('SESS_GC_DIVISOR'))
+    define('SESS_GC_DIVISOR', 100);
+if (!defined('SESS_GC_PROB'))
+    define('SESSION_GC_PROB', 1);
