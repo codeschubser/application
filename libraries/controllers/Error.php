@@ -76,7 +76,7 @@ class Error
      */
     public function register()
     {
-
+        set_error_handler(array($this, 'error'));
     }
 
     /**
@@ -89,7 +89,7 @@ class Error
      */
     public function unregister()
     {
-
+        
     }
 
     /**
