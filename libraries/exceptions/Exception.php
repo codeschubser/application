@@ -35,4 +35,22 @@ namespace de\codeschubser\application\exceptions;
 class Exception extends \Exception
 {
 
+    /**
+     * CONSTRUCTOR
+     *
+     * Override parent constructor to make $message and $code not optionally.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   string      $message    The Exception message to throw.
+     * @param   int         $code       The Exception code.
+     * @param   \Exception  $previous   Optional: The previous exception used for the exception chaining, default:null
+     * @return  void
+     */
+    public function __construct($message, $code, \Exception $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+    }
+
 }
