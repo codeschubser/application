@@ -38,5 +38,41 @@ namespace de\codeschubser\application\vendors;
  */
 class Autoloader
 {
-    
+    /**
+     * An associative array where the key is a namespace prefix and the value
+     * is an array of base directories for classes in that namespace.
+     *
+     * @since   0.0.1
+     *
+     * @access  protected
+     * @var     array
+     */
+    protected $prefixes = array();
+
+    /**
+     * Register loader with SPL autoloader stack.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  bool
+     */
+    public function register()
+    {
+        return spl_autoload_register(array($this, 'load'));
+    }
+
+    /**
+     * Unregister loader with SPL autoloader stack.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  bool
+     */
+    public function unregister()
+    {
+        return spl_autoload_unregister(array($this, 'load'));
+    }
+
 }
