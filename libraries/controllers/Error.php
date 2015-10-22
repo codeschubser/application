@@ -105,7 +105,7 @@ class Error
      * @param   array   $context    Optional: An array that points to the active symbol table at the point the error occurred, default:array
      * @return  bool    Every times true to disable PHP internal error handler.
      */
-    public function error($code, $message, $file = __FILE__, $line = __LINE__,
+    public function errors($code, $message, $file = __FILE__, $line = __LINE__,
         array $context = array())
     {
         // Error code is not included in error_reporting
