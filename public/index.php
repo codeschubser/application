@@ -1,4 +1,7 @@
 <?php
+
+use de\codeschubser\application\controllers\Frontend;
+
 /**
  * Default access file.
  *
@@ -36,3 +39,5 @@ if (!defined('ABSPATH'))
 
 // Bootstrapping
 require_once(ABSPATH . '/includes/common.php');
+
+new Frontend();
