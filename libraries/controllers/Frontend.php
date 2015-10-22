@@ -36,5 +36,8 @@ namespace de\codeschubser\application\controllers;
  */
 class Frontend
 {
-    //put your code here
+    public function __construct()
+    {
+        
+    }
 }
