@@ -1,6 +1,7 @@
 <?php
 
-use de\codeschubser\application\vendors\Autoloader;
+use de\codeschubser\application\vendors\Autoloader,
+    de\codeschubser\application\controllers\Error;
 
 /**
  * Advanced configuration file.
@@ -64,3 +65,6 @@ $loader->addNamespace('\de\codeschubser\application\vendors', ABSPATH . '/librar
 $loader->addNamespace('\de\codeschubser\application\views', ABSPATH . '/libraries/views');
 $loader->addNamespace('\de\codeschubser\application\plugins', ABSPATH . '/plugins');
 $loader->register();
+
+// Error handler
+new Error();
