@@ -2,6 +2,8 @@
 
 namespace de\codeschubser\application\controllers;
 
+use de\codeschubser\application\models\Session;
+
 /**
  * Frontend controller.
  *
@@ -38,6 +40,7 @@ class Frontend
 {
     public function __construct()
     {
-        
+        // Initialize session handling
+        new Session();
     }
 }
