@@ -60,4 +60,4 @@ if (!defined('SESS_TIMEOUT'))
 if (!defined('SESS_GC_DIVISOR'))
     define('SESS_GC_DIVISOR', 100);
 if (!defined('SESS_GC_PROB'))
-    define('SESSION_GC_PROB', 1);
+    define('SESS_GC_PROB', 1);
