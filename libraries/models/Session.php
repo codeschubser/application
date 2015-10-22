@@ -49,9 +49,22 @@ class Session extends \SessionHandler
         // Set session environment
 
         // Set own session handler
-
+        $this->register();
 
         // Start session
         session_start();
+    }
+
+    /**
+     * Register own session handler
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  bool    Returns true on success or false on failure.
+     */
+    public function register()
+    {
+        return session_set_save_handler($this, true);
     }
 }
