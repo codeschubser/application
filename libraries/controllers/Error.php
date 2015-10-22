@@ -76,7 +76,7 @@ class Error
      */
     public function register()
     {
-        set_error_handler(array($this, 'error'));
+        set_error_handler(array($this, 'errors'));
     }
 
     /**
@@ -112,6 +112,8 @@ class Error
         if (!(error_reporting() & $code)) {
             return;
         }
+
+        
 
         // Disable PHP internal error handler
         return true;
