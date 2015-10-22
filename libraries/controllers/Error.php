@@ -66,4 +66,17 @@ class Error
         }
     }
 
+    /**
+     * Register own error handler class.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @return  void
+     */
+    public function register()
+    {
+
+    }
+
 }
