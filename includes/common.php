@@ -67,4 +67,5 @@ $loader->addNamespace('\de\codeschubser\application\plugins', ABSPATH . '/plugin
 $loader->register();
 
 // Error handler
-new Error();
+$erh = new Error();
+$erh->register();
