@@ -115,7 +115,7 @@ class Autoloader
      *
      * @access  public
      * @param   string  $class  The fully-qualified class name.
-     * @return  mixed   The mapped file name on success, or boolean false on failure.
+     * @return  string|bool     The mapped file name on success, or boolean false on failure.
      */
     public function loadClass($class)
     {
@@ -143,6 +143,45 @@ class Autoloader
         }
 
         // Never found a mapped file
+        return false;
+    }
+
+    /**
+     * Load the mapped file for a namespace prefix and relative class.
+     *
+     * @since   0.0.1
+     *
+     * @access  protected
+     * @param   string  $prefix         The namespace prefix.
+     * @param   string  $relative_class The relative class name.
+     * @return  bool|string     Boolean false if no mapped file can be loaded,
+     *                          or the name of the mapped file that was loaded.
+     */
+    protected function loadMappedFile($prefix, $relative_class)
+    {
+        // Are there any base directories for this namespace prefix?
+        if (isset($this->prefixes[$prefix]) === false) {
+            return false;
+        }
+
+        // Look through base directories for this namespace prefix
+        foreach ($this->prefixes[$prefix] as $base_dir) {
+
+            // Replace the namespace prefix with the base directory,
+            // replace namespace separators with directory separators
+            // in the relative class name, append with .php
+            $file = $base_dir
+                . str_replace('\\', '/', $relative_class)
+                . '.php';
+
+            // If the mapped file exists, require it
+            if ($this->requireFile($file)) {
+                // Yes, we're done
+                return $file;
+            }
+        }
+
+        // Never found it
         return false;
     }
 
