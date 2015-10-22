@@ -59,7 +59,7 @@ class Autoloader
      */
     public function register()
     {
-        return spl_autoload_register(array($this, 'load'));
+        return spl_autoload_register(array($this, 'loadClass'));
     }
 
     /**
@@ -72,7 +72,7 @@ class Autoloader
      */
     public function unregister()
     {
-        return spl_autoload_unregister(array($this, 'load'));
+        return spl_autoload_unregister(array($this, 'loadClass'));
     }
 
     /**
@@ -106,6 +106,44 @@ class Autoloader
         } else {
             array_push($this->prefixes[$prefix], $base_dir);
         }
+    }
+
+    /**
+     * Loads the class file for a given class name.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   string  $class  The fully-qualified class name.
+     * @return  mixed   The mapped file name on success, or boolean false on failure.
+     */
+    public function loadClass($class)
+    {
+        // The current namespace prefix
+        $prefix = $class;
+
+        // Work backwards through the namespace names of the fully-qualified
+        // class name to find a mapped file name
+        while (false !== $pos = strrpos($prefix, '\\')) {
+
+            // Retain the trailing namespace separator in the prefix
+            $prefix = substr($class, 0, $pos + 1);
+
+            // The rest is the relative class name
+            $relative_class = substr($class, $pos + 1);
+
+            // Try to load a mapped file for the prefix and relative class
+            $mapped_file = $this->loadMappedFile($prefix, $relative_class);
+            if ($mapped_file) {
+                return $mapped_file;
+            }
+
+            // Remove the trailing namespace separator for the next iteration of strrpos()
+            $prefix = rtrim($prefix, '\\');
+        }
+
+        // Never found a mapped file
+        return false;
     }
 
 }
