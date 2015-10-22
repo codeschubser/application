@@ -151,6 +151,8 @@ class Autoloader
      *
      * @since   0.0.1
      *
+     * @see     loadClass
+     *
      * @access  protected
      * @param   string  $prefix         The namespace prefix.
      * @param   string  $relative_class The relative class name.
