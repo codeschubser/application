@@ -55,3 +55,12 @@ require_once(ABSPATH . '/includes/functions.php');
 // Autoloader
 require_once(ABSPATH . '/libraries/vendors/Autoloader.php');
 
+$loader = new Autoloader();
+$loader->addNamespace('\de\codeschubser\application\controllers', ABSPATH . '/libraries/controllers');
+$loader->addNamespace('\de\codeschubser\application\exceptions', ABSPATH . '/libraries/exceptions');
+$loader->addNamespace('\de\codeschubser\application\interfaces', ABSPATH . '/libraries/interfaces');
+$loader->addNamespace('\de\codeschubser\application\models', ABSPATH . '/libraries/models');
+$loader->addNamespace('\de\codeschubser\application\vendors', ABSPATH . '/libraries/vendors');
+$loader->addNamespace('\de\codeschubser\application\views', ABSPATH . '/libraries/views');
+$loader->addNamespace('\de\codeschubser\application\plugins', ABSPATH . '/plugins');
+$loader->register();
