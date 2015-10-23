@@ -36,5 +36,24 @@ namespace de\codeschubser\application\models;
  */
 class User
 {
-    
+    /**
+     * Sign in a user.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @param   int     $user   The user ident.
+     * @return  bool    True on success, otherwise false.
+     */
+    public static function login($user)
+    {
+        // Is ident a integer and greater then zero
+        if (is_int($user) && 0 < $user) {
+
+        }
+
+        // Login attempt failed.
+        return false;
+    }
 }
