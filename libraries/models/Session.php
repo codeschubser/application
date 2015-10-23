@@ -165,4 +165,25 @@ class Session extends \SessionHandler
         }
     }
 
+    /**
+     * Delete an existing session variable.
+     *
+     * @since   0.0.2
+     *
+     * @access  public
+     * @static
+     * @param   string  $name   Name of the session variable.
+     * @return  bool    True on success, otherwise false.
+     */
+    public static function delete($name)
+    {
+        if (isset($_SESSION[$name])) {
+            unset($_SESSION[$name]);
+
+            return true;
+        }
+
+        return false;
+    }
+
 }
