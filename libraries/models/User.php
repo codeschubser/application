@@ -73,6 +73,26 @@ class User
         // Default response.
         $result = null;
 
+        switch(trim(strtolower($state))) {
+            // Checks if user is logged in
+            case 'auth':
+            case 'login':
+            case 'loggedin':
+            case 'authenticated':
+                $result = Auth::isAuthenticated();
+                break;
+            // Check if user has no session timeout
+            case 'active':
+                $result = !self::has('timeout');
+                break;
+            // Check if user has a session timeout
+            case 'inactive':
+                $result = self::has('timeout');
+                break;
+            default:
+                break;
+        }
+
         // Return result
         return $result;
     }
@@ -92,6 +112,14 @@ class User
         // Default response.
         $result = null;
 
+        switch(trim(strtolower($property))) {
+            // Check if user has a session timeout
+            case 'timeout':
+                $result = Auth::hasTimeout();
+                break;
+            default:
+                break;
+        }
 
         // Return result
         return $result;
