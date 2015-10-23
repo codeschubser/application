@@ -49,7 +49,7 @@ class Auth
     public static function attempt($username, $password)
     {
         // TODO: Compare credentials
-
+        
         // Attempt failed
         return false;
     }
