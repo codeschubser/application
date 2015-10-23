@@ -63,3 +63,9 @@ if (!defined('SESS_GC_PROB'))
     define('SESS_GC_PROB', 1);
 if (!defined('SESS_ENC_KEY'))
     define('SESS_ENC_KEY', pack('H*', md5(ABSPATH)));
+
+/**
+ * Date and time
+ */
+if (!defined('DATETIME_TIMEZONE'))
+    define('DATETIME_TIMEZONE', 'UTC');
