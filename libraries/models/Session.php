@@ -30,7 +30,7 @@ namespace de\codeschubser\application\models;
  * @author      Michael Topp <blog@codeschubser.de>
  * @copyright   Copyright (c), 2015 Codeschubser.de
  * @license     http://www.opensource.org/licenses/mit-license.html  MIT License
- * @version     $Id: Session.php,v 0.0.1 22.10.2015 10:23:30 mitopp Exp $;
+ * @version     $Id: Session.php,v 0.0.2 23.10.2015 10:15:30 mitopp Exp $;
  */
 class Session extends \SessionHandler
 {
@@ -107,6 +107,22 @@ class Session extends \SessionHandler
         $data = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, SESS_ENC_KEY, $session_data, MCRYPT_MODE_ECB);
 
         return parent::write($session_id, $data);
+    }
+
+    /**
+     * Sets a session variable.
+     *
+     * @since   0.0.2
+     *
+     * @access  public
+     * @static
+     * @param   type    $name   Name of the session variable.
+     * @param   type    $value  Value of the session variable.
+     * @return  void
+     */
+    public static function set($name, $value)
+    {
+        $_SESSION[$name] = $value;
     }
 
 }
