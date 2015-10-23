@@ -34,5 +34,24 @@ namespace de\codeschubser\application\models;
  */
 class Auth
 {
-    
+
+    /**
+     * Returns the result of a logon attempt.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @param   string      $username   The user name for the attempt.
+     * @param   string      $password   The password for the attempt.
+     * @return  int|bool    The user ID if successful, otherwise false.
+     */
+    public static function attempt($username, $password)
+    {
+        // TODO: Compare credentials
+
+        // Attempt failed
+        return false;
+    }
+
 }
