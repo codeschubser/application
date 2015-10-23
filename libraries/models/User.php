@@ -36,6 +36,7 @@ namespace de\codeschubser\application\models;
  */
 class User
 {
+
     /**
      * Sign in a user.
      *
@@ -56,4 +57,5 @@ class User
         // Login attempt failed.
         return false;
     }
+
 }
