@@ -125,4 +125,23 @@ class Session extends \SessionHandler
         $_SESSION[$name] = $value;
     }
 
+    /**
+     * Returns the value of a session variable.
+     *
+     * @since   0.0.2
+     *
+     * @access  public
+     * @static
+     * @param   string      $name   Name of the session variable.
+     * @return  mixed|bool  Value of variable if set, false if not.
+     */
+    public static function get($name)
+    {
+        if (isset($_SESSION[$name])) {
+            return $_SESSION[$name];
+        }
+
+        return false;
+    }
+
 }
