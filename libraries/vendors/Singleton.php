@@ -34,5 +34,77 @@ namespace de\codeschubser\application\vendors;
  */
 class Singleton
 {
-    
+    /**
+     * Singleton reference to singleton instance.
+     *
+     * @since   0.0.1
+     *
+     * @access  protected
+     * @static
+     * @var     object
+     */
+    protected static $instance;
+
+    /**
+     * Returns the singleton instance.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @return  object
+     */
+    public static function getInstance()
+    {
+        if (null === static::$instance) {
+            static::$instance = new static;
+        }
+
+        return static::$instance;
+    }
+
+    /**
+     * CONSTRUCTOR
+     *
+     * Prevents a outside call.
+     *
+     * @since   0.0.1
+     *
+     * @access  protected
+     * @return  void
+     */
+    protected function __construct()
+    {
+
+    }
+
+    /**
+     * CLONE
+     *
+     * Prevent the instance from being cloned.
+     *
+     * @since   0.0.1
+     *
+     * @access  private
+     * @return  void
+     */
+    private function __clone()
+    {
+
+    }
+
+    /**
+     * WAKEUP
+     *
+     * Prevent from being unserialized.
+     *
+     * @since   0.0.1
+     *
+     * @access  private
+     * @return  void
+     */
+    private function __wakeup()
+    {
+
+    }
 }
