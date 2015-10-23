@@ -34,5 +34,21 @@ namespace de\codeschubser\application\models;
  */
 class Datetime extends \DateTime
 {
-    
+    /**
+     * CONSTRUCTOR
+     *
+     * Override to defaults.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @param   string          $time       Optional: Time, default:now
+     * @param   \DateTimeZone   $timezone   Optional: Timezone identifier, default:UTC
+     * @return  void
+     */
+    function __construct(string $time = 'now', \DateTimeZone $timezone = null)
+    {
+        parent::__construct($time, is_null($timezone) ? new \DateTimeZone('UTC') : $timezone);
+    }
+
 }
