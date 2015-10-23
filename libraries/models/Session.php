@@ -144,4 +144,25 @@ class Session extends \SessionHandler
         return false;
     }
 
+    /**
+     * Kill/Destroy the sessions.
+     *
+     * Restart a empty session on demand.
+     *
+     * @since   0.0.2
+     *
+     * @access  public
+     * @static
+     * @param   bool    $restart    Restart a empty session.
+     * @return  void
+     */
+    public static function kill($restart = false)
+    {
+        session_destroy();
+
+        if ($restart) {
+            $_SESSION = array();
+        }
+    }
+
 }
