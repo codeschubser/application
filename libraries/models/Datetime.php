@@ -34,6 +34,7 @@ namespace de\codeschubser\application\models;
  */
 class Datetime extends \DateTime
 {
+
     /**
      * CONSTRUCTOR
      *
@@ -46,9 +47,10 @@ class Datetime extends \DateTime
      * @param   \DateTimeZone   $timezone   Optional: Timezone identifier, default:UTC
      * @return  void
      */
-    function __construct(string $time = 'now', \DateTimeZone $timezone = null)
+    function __construct($time = "now", \DateTimeZone $timezone = null)
     {
-        parent::__construct($time, is_null($timezone) ? new \DateTimeZone(DATETIME_TIMEZONE) : $timezone);
+        parent::__construct($time,
+            (null === $timezone) ? new \DateTimeZone(DATETIME_TIMEZONE) : $timezone);
     }
 
 }
