@@ -49,8 +49,25 @@ class Auth
     public static function attempt($username, $password)
     {
         // TODO: Compare credentials
-        
         // Attempt failed
+        return false;
+    }
+
+    /**
+     * Check if user is authenticated from session.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @return  bool    True if authenticated, otherwise false.
+     */
+    public static function isAuthenticated()
+    {
+        if (Session::get('ident')) {
+            return true;
+        }
+
         return false;
     }
 
