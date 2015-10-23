@@ -58,4 +58,23 @@ class User
         return false;
     }
 
+    /**
+     * Returns the check result of an user state.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @param   string      $state  The state to check.
+     * @return  null|bool   Bool as result, null if $state not defined.
+     */
+    public static function is($state)
+    {
+        // Default response.
+        $result = null;
+
+        // Return result
+        return $result;
+    }
+
 }
