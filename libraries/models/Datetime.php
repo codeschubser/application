@@ -48,7 +48,7 @@ class Datetime extends \DateTime
      */
     function __construct(string $time = 'now', \DateTimeZone $timezone = null)
     {
-        parent::__construct($time, is_null($timezone) ? new \DateTimeZone('UTC') : $timezone);
+        parent::__construct($time, is_null($timezone) ? new \DateTimeZone(DATETIME_TIMEZONE) : $timezone);
     }
 
 }
