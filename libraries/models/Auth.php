@@ -71,4 +71,26 @@ class Auth
         return false;
     }
 
+    /**
+     * Check if user has timeout from session.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @return  bool    True if timeout, otherwise false.
+     */
+    public static function hasTimeout()
+    {
+        if (self::isAuthenticated()) {
+            if (Session::get('activity')) {
+                if (SESS_TIMEOUT <= (time() - Session::get('activity'))) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
 }
