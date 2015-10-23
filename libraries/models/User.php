@@ -77,4 +77,24 @@ class User
         return $result;
     }
 
+    /**
+     * Returns the check result of an user property.
+     *
+     * @since   0.0.1
+     *
+     * @access  public
+     * @static
+     * @param   string      $property
+     * @return  null|bool   Bool as result, null if $property not defined.
+     */
+    public static function has($property)
+    {
+        // Default response.
+        $result = null;
+
+
+        // Return result
+        return $result;
+    }
+
 }
